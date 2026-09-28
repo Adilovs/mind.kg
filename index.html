@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f4" />
+    <meta name="description" content="Карта знаний Mind.kg: математика, физика, Computer Science и искусственный интеллект." />
+    <title>Mind.kg — карта знаний</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#home" aria-label="Mind.kg — главная">
+          <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+          <span>mind<span class="brand-dot">.</span>kg</span>
+        </a>
+        <div class="sidebar-caption">ПРОСТРАНСТВО ЗНАНИЙ</div>
+        <nav class="main-nav" aria-label="Главная навигация">
+          <a href="#home" data-nav="home"><span class="nav-icon">⌂</span>Главная</a>
+          <div class="nav-label">Исследуй</div>
+          <a href="#world/math" data-nav="math"><span class="nav-icon">∑</span>Мир математики</a>
+          <a href="#world/physics" data-nav="physics"><span class="nav-icon">◉</span>Мир физики</a>
+          <a href="#world/cs" data-nav="cs"><span class="nav-icon">⌘</span>Computer Science</a>
+          <a href="#world/ai" data-nav="ai"><span class="nav-icon">✳</span>Мир AI</a>
+          <div class="nav-label nav-label-spaced">Инструменты</div>
+          <a href="#roadmap" data-nav="roadmap"><span class="nav-icon">⌁</span>Roadmap</a>
+          <a href="#lab" data-nav="lab"><span class="nav-icon">⚗</span>AI Lab <span class="soon-tag">скоро</span></a>
+          <a href="#research" data-nav="research"><span class="nav-icon">⌕</span>Исследования</a>
+          <a href="#resources" data-nav="resources"><span class="nav-icon">▤</span>Ресурсы</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-note"><span class="note-spark">✳</span><div><strong>Знание связано</strong><p>Каждая идея ведёт к следующей.</p></div></div>
+          <div class="sidebar-footer"><span class="status-dot"></span>Открытая карта знаний <span class="version">v0.1</span></div>
+        </div>
+      </aside>
+      <main class="main-area">
+        <header class="topbar">
+          <button class="mobile-menu" id="menu-toggle" aria-label="Открыть меню">☰</button>
+          <div class="breadcrumbs" id="breadcrumbs"><span>Главная</span></div>
+          <button class="search-trigger" id="search-trigger"><span class="search-symbol">⌕</span><span>Найти тему или связь...</span><kbd>⌘ K</kbd></button>
+          <button class="theme-button" id="theme-toggle" aria-label="Переключить цветовую тему" title="Светлая / тёмная тема">◐</button>
+          <button class="language-button" aria-label="Язык интерфейса">RU <span>⌄</span></button>
+        </header>
+        <div id="view" class="page-content"></div>
+        <footer class="page-footer"><span>Mind.kg <span class="brand-dot">·</span> Карта знаний в процессе роста</span><span>Учись. Понимай. Связывай.</span></footer>
+      </main>
+    </div>
+    <div class="modal-backdrop" id="search-modal" hidden>
+      <section class="search-modal" role="dialog" aria-modal="true" aria-label="Поиск по карте знаний">
+        <div class="search-input-wrap"><span>⌕</span><input id="global-search" placeholder="Например, производная или нейросеть..." autocomplete="off" /><kbd>ESC</kbd></div>
+        <div class="search-hint">ПОИСК ПО ТЕМАМ И ИХ СВЯЗЯМ</div>
+        <div id="search-results" class="search-results"></div>
+        <div class="search-bottom"><span>↑↓ перемещение</span><span>↵ открыть тему</span><span>ESC закрыть</span></div>
+      </section>
+    </div>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+    <script src="./src/content.js"></script>
+    <script src="./src/app.js"></script>
+  </body>
+</html>
